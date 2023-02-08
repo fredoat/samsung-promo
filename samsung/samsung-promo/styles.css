@@ -1,0 +1,469 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400&display=swap');
+
+/* Note bootstrap is a mobile first framework so the mobile styles are implemented 1st */
+
+* {
+  background-color: #000;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+/*Variables*/
+:root {
+  --background-color: linear-gradient(120deg, #37393b, #2e3032);
+  --background-color2: linear-gradient(120deg, #000000, #2e3032);
+  --light-font-color: #b9bbc2;
+  --btn-color: rgb(104, 104, 104);
+}
+
+a {
+  text-decoration: none !important;
+  color: var(--light-font-color);
+  color: lightgray;
+  transition: color .5s ease-in-out;
+}
+
+a:hover {
+  color: #fff !important;
+}
+
+p {
+  font-weight: 300;
+}
+
+.light-font {
+  color: var(--light-font-color);
+}
+
+/* -------------- Components Start-------------- */
+.btn {
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-size: 14px;
+  color: #fff;
+  color: silver;
+  text-transform: uppercase;
+  background-color: var(--btn-color);
+}
+
+/* -------------- Components End-------------- */
+/* -------------- Header Start-------------- */
+header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* high z index value no reason given */
+  z-index: 2000;
+}
+
+.nav {
+  width: 100%;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  font-size: 23px;
+  font-weight: 300;
+}
+
+.nav-brand .logo {
+  width: 150px;
+  margin-right: 20px;
+}
+
+.nav-brand span {
+  color: #fff;
+}
+
+.nav-brand .vertical-line,
+span {
+  margin-right: 15px;
+}
+
+/* Hamburger Menu */
+.menu-toggler {
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2000;
+}
+
+/* Mobile nav-list */
+.nav-list {
+  position: fixed;
+  /* top: 0; */
+  /* This hides the mobile nav-list until the hamburger menu is clicked */
+  top: -100vh;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 1500;
+  transition: top .5s ease-in-out;
+}
+
+/* When the class nav-list has the class of active as well then the styles will be added*/
+.nav-list.active {
+  top: 0;
+}
+
+.nav-link {
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-size: 14px;
+  /* border: 1px solid #fff; */
+  /* color: #fff; */
+}
+
+.nav-link {
+  background-color: var(--btn-color);
+}
+
+.nav-link2 {
+  background-color: #1e90ff;
+  color: #dcdcdc !important;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  box-shadow: var(--shadow-inset);
+}
+
+/* -------------- Header End-------------- */
+/* -------------- Hero Start-------------- */
+.hero {
+  width: 100%;
+  height: 1000px;
+  background-color: #000;
+  /* image is to big for the backround color so there is overflow. This cuts off the overflowing image where the background image ends. */
+  overflow: hidden;
+}
+
+.main-content {
+  /* color: var(--light-font-color) */
+  color: #fff;
+}
+
+.main-heading {
+  font-size: 45px;
+  margin-top: 150px;
+}
+
+.second-heading {
+  font-size: 45px;
+}
+
+.second-heading:nth-child(4) {
+  margin-bottom: 50px;
+}
+
+.hero .img2 {
+  width: 18%;
+}
+
+/* -------------- Hero End-------------- */
+/* -------------- Closer look Start-------------- */
+.closer-look {
+  padding: 150px 0;
+  color: var(--light-font-color);
+  background-color: #000;
+}
+
+.closer-look ul {
+  list-style: "-       ";
+  list-style-position: outside;
+}
+
+.section-heading {
+  color: #fff;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+/* .closer-look-img {
+  width: 80%;
+} */
+
+/* -------------- Closer look End-------------- */
+/* -------------- Sharp Contrast Start-------------- */
+.black {
+  background-color: #000;
+  color: var(--light-font-color);
+}
+
+.btn-soft.dark {
+  box-shadow: var(--shadow-normal);
+}
+
+.btn-soft.dark:hover,
+.btn-soft.dark:focus {
+  box-shadow: var(--shadow-inset);
+}
+
+/* -------------- Sharp Contrast End-------------- */
+
+/* -------------- Accessories Start-------------- */
+.accessories {
+  padding-bottom: 200px !important;
+}
+
+.acc-h3 {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 300;
+}
+
+/* -------------- Accessories End-------------- */
+
+/* -------------- PreOrder Start-------------- */
+.preorder {
+  width: 100%;
+  /* padding-top: 0px !important; */
+  padding-bottom: 120px !important;
+  background-color: #000;
+}
+
+.preorder-h1 {
+  color: #fff;
+}
+
+.preorder-h3 {
+  font-size: 17px;
+  font-weight: 300;
+}
+
+.preorder-btn {
+  background-color: #1e90ff !important;
+  color: #dcdcdc !important;
+}
+
+/* -------------- PreOrder End-------------- */
+
+/* ------------- Transition Start ------------- */
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+
+}
+
+/* ------------- Transition End ------------- */
+
+/* -------------- Footer Start-------------- */
+.footer {
+  background-color: #000;
+  padding-bottom: 100px !important;
+}
+
+.footer-link {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.footer-link .logo {
+  width: 120px;
+  margin-right: 20px
+}
+
+footer a {
+  font-weight: 300;
+}
+
+/* footer h5{
+  color: #fff;
+  font-size: 16px;
+} */
+
+.up-icon {
+  margin-right: 15px;
+  padding: 8px;
+  border: .5px solid rgb(66, 66, 66);
+  border-radius: 50%;
+}
+
+/* -------------- Footer End-------------- */
+/* -------------- Media Queries Start-------------- */
+@media screen and (max-width: 768px) {
+  .hero {
+    height: 750px;
+  }
+
+  .hero .img2 {
+    width: 30%;
+  }
+
+  .sharp-contrast-img {
+    margin-bottom: 60px !important;
+  }
+
+  .speed-img {
+    margin-bottom: 60px !important;
+  }
+
+  .acc-img {
+    margin-bottom: 70px !important;
+  }
+
+  .acc-h3 {
+    font-size: 1rem;
+  }
+
+  .footer-logo {
+    text-align: center !important;
+  }
+
+  .scroll-up {
+    margin-top: 45px;
+    justify-content: center !important;
+  }
+
+  .scroll-up a {
+    margin: 0 !important;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  header .nav-container {
+    padding: 0 20px !important;
+  }
+
+  .nav-brand .logo {
+    width: 100px;
+    margin-right: 10px;
+  }
+
+  .nav-brand .vertical-line {
+    margin-right: 5px;
+  }
+
+  .nav-brand span {
+    font-size: 17px;
+  }
+
+  .main-heading {
+    font-size: 35px;
+  }
+
+  .second-heading {
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    padding: 0 40px !important;
+  }
+
+  .hero .img2 {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 448px) {
+  .hero {
+    height: 650px;
+  }
+
+  .hero .img2 {
+    width: 40%;
+  }
+
+  .nav-brand .logo {
+    width: 80px;
+  }
+
+  .nav-brand span {
+    font-size: 12px;
+    margin-right: 0px;
+  }
+
+  .main-heading {
+    font-size: 25px;
+  }
+
+  .second-heading {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  header .nav-container {
+    padding: 0 15px !important;
+  }
+
+  .hero .img2 {
+    width: 45%;
+  }
+
+  .nav-brand .logo {
+    width: 75px;
+  }
+
+  .nav-brand span {
+    font-size: 10px;
+  }
+
+  .main-heading {
+    font-size: 20px;
+  }
+
+  .second-heading {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .section-heading {
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .nav {
+    height: 86px;
+  }
+
+  .menu-toggler {
+    display: none;
+  }
+
+  .nav-list {
+    position: initial;
+    width: initial;
+    height: initial;
+    background-image: none;
+    margin: 0;
+    flex-direction: row;
+  }
+
+  .nav-item {
+    margin: 0 15px;
+  }
+
+  .nav-item:last-child {
+    margin-right: 0;
+  }
+}
+
+/* -------------- Media Queries End-------------- */
